@@ -1,3 +1,4 @@
+<!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,61 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cover Letter Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
-   
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" type="images/OIP.jpeg" href="images/OIP.jpeg">   
     <link href="style.css" rel="stylesheet">
-
+    <link rel="icon" type="image/jpeg" href="images/OIP.jpeg">
 </head>
-<body class="min-h-screen flex flex-col items-center p-4 bg-gray-100">
-    <div class="container mx-auto bg-white shadow-custom rounded-xl p-6 md:p-8 flex flex-col lg:flex-row gap-8 w-full">
+<body class="min-h-screen flex flex-col items-center p-4 bg-gray-100 font-inter">
+    <div class="container mx-auto bg-white shadow-custom rounded-xl p-6 md:p-8 flex flex-col lg:flex-row gap-8 w-full max-w-6xl">
 
-        <div class="w-full lg:w-1/3 bg-blue-50 p-6 rounded-xl shadow-md flex flex-col">
-            <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Generate Your Cover Letter</h2>
+        <div class="w-full lg:w-1/3 bg-blue-50 p-6 rounded-xl shadow-panel flex flex-col">
+            <h2 class="text-3xl font-playfair font-bold text-blue-800 mb-6 text-center leading-tight">Generate Your Cover Letter</h2>
 
             <div class="space-y-4 flex-grow">
                 <div>
                     <label for="jobRole" class="block text-sm font-medium text-gray-700 mb-1">Job Role</label>
-                    <input type="text" id="jobRole" class="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="e.g., Software Developer">
+                    <input type="text" id="jobRole" class="w-full p-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200" placeholder="e.g., Software Developer">
                 </div>
                 <div>
                     <label for="experience" class="block text-sm font-medium text-gray-700 mb-1">Years of Experience</label>
-                    <input type="text" id="experience" class="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="e.g., 3 years or Fresher">
+                    <input type="text" id="experience" class="w-full p-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200" placeholder="e.g., 3 years or Fresher">
                 </div>
                 <div>
                     <label for="skills" class="block text-sm font-medium text-gray-700 mb-1">Core Skills / Technologies (comma-separated)</label>
-                    <input type="text" id="skills" class="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="e.g., Python, Team Leadership, React">
+                    <input type="text" id="skills" class="w-full p-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200" placeholder="e.g., Python, Team Leadership, React">
                 </div>
                 <div>
                     <label for="values" class="block text-sm font-medium text-gray-700 mb-1">Personal Values / Strengths (comma-separated)</label>
-                    <input type="text" id="values" class="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-500 focus:border-transparent" placeholder="e.g., punctuality, ethics, problem-solving">
+                    <input type="text" id="values" class="w-full p-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200" placeholder="e.g., punctuality, ethics, problem-solving">
                 </div>
                 <div>
                     <label for="companyName" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-                    <input type="text" id="companyName" class="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="e.g., Google Inc.">
+                    <input type="text" id="companyName" class="w-full p-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200" placeholder="e.g., Google Inc.">
                 </div>
                 <div>
                     <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">Why You're Interested in the Job</label>
-                    <textarea id="interest" rows="3" class="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="e.g., I am passionate about their mission to..."></textarea>
+                    <textarea id="interest" rows="3" class="w-full p-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200" placeholder="e.g., I am passionate about their mission to..."></textarea>
                 </div>
 
-                <div class="pt-4 border-t border-blue-200">
+                <div class="pt-4 border-t border-blue-100">
                     <label class="block text-sm font-medium text-gray-700 mb-2">Cover Letter Style</label>
                     <div class="flex gap-4">
                         <label class="inline-flex items-center">
-                            <input type="radio" name="letterStyle" value="traditional" class="form-radio text-blue-600" checked>
+                            <input type="radio" name="letterStyle" value="traditional" class="form-radio text-blue-600 focus:ring-blue-500" checked>
                             <span class="ml-2 text-gray-800">Traditional</span>
                         </label>
                         <label class="inline-flex items-center">
-                            <input type="radio" name="letterStyle" value="modern" class="form-radio text-blue-600">
+                            <input type="radio" name="letterStyle" value="modern" class="form-radio text-blue-600 focus:ring-blue-500">
                             <span class="ml-2 text-gray-800">Modern</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="pt-4 border-t border-blue-200">
+                <div class="pt-4 border-t border-blue-100">
                     <label for="tone" class="block text-sm font-medium text-gray-700 mb-2">Tone</label>
-                    <select id="tone" class="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <select id="tone" class="w-full p-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition duration-200">
                         <option value="neutral">Neutral</option>
                         <option value="polite">Polite</option>
                         <option value="confident">Confident</option>
@@ -67,38 +66,35 @@
                 </div>
             </div>
 
-            <button id="generateBtn" class="mt-6 w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700 transition-colors shadow-md flex items-center justify-center">
+            <button id="generateBtn" class="mt-6 w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 shadow-md flex items-center justify-center">
                 <span id="generateBtnText">Generate Cover Letter</span>
                 <div id="loader" class="loader ml-3 hidden"></div>
             </button>
         </div>
 
-        <main class="w-full lg:w-2/3 bg-gray-50 p-6 rounded-xl shadow-md flex flex-col">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Your Cover Letter</h2>
+        <main class="w-full lg:w-2/3 bg-gray-50 p-6 rounded-xl shadow-panel flex flex-col">
+            <h2 class="text-3xl font-playfair font-bold text-gray-800 mb-6 text-center leading-tight">Your Cover Letter</h2>
 
-            <div id="coverLetterOutput" class="flex-grow bg-white p-6 rounded-lg shadow-inner overflow-y-auto min-h-[300px] modern-style" contenteditable="true">
-                <p class="text-gray-500 text-center">Your generated cover letter will appear here.</p>
+<div id="coverLetterOutput" class="flex-grow bg-white p-6 rounded-lg shadow-inner-custom overflow-y-auto min-h-[300px] traditional-style border border-gray-200" contenteditable="true">                <p class="text-gray-500 text-center">Your generated cover letter will appear here.</p>
             </div>
 
             <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4" id="actionButtons">
-                <button id="copyToClipboardBtn" class="bg-green-600 text-white p-3 rounded-md hover:bg-green-700 transition-colors shadow-md flex-1">Copy to Clipboard</button>
-                <button id="exportPdfBtn" class="bg-red-600 text-white p-3 rounded-md hover:bg-red-700 transition-colors shadow-md flex-1">Export as PDF</button>
+                <button id="copyToClipboardBtn" class="bg-green-600 text-white p-3 rounded-md hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 shadow-md flex-1">Copy to Clipboard</button>
+                <button id="exportPdfBtn" class="bg-red-600 text-white p-3 rounded-md hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors duration-200 shadow-md flex-1">Export as PDF</button>
             </div>
         </main>
     </div>
 
-    <div id="messageBox" class="message-box fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
-        <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
+    <div id="messageBox" class="message-box fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center border border-gray-300">
             <p id="messageText" class="text-lg font-semibold text-gray-800 mb-4"></p>
-            <button id="messageBoxClose" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">OK</button>
+            <button id="messageBoxClose" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200">OK</button>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    
-     
     <script src="script.js"></script>
 </body>
 </html>
