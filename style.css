@@ -1,116 +1,102 @@
- body {
-            font-family: 'Inter', sans-serif;
-            background-color: #415782; /* Light gray background */
-        }
-        .container {
-            max-width: 1200px;
-        }
-        .shadow-custom {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
+  /* style.css */
 
-        /* Traditional Style */
-        .traditional-style {
-            font-family: 'Playfair Display', serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        .traditional-style h1, .traditional-style h2, .traditional-style h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-        .traditional-style p {
-            margin-bottom: 1rem;
-        }
+/* Root variables for consistent theming */
+:root {
+    --primary-blue: #2563eb; /* Tailwind blue-600 */
+    --primary-blue-dark: #1d4ed8; /* Tailwind blue-700 */
+    --secondary-gray: #f3f4f6; /* Tailwind gray-100 */
+    --text-dark: #1f2937; /* Tailwind gray-900 */
+    --text-medium: #4b5563; /* Tailwind gray-700 */
+    --border-light: #e5e7eb; /* Tailwind gray-200 */
+    --focus-ring-blue: #60a5fa; /* Tailwind blue-400 */
+    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* md shadow */
+    --shadow-strong: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* custom shadow */
+}
 
-        /* Modern Style */
-        .modern-style {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: #4a4a4a;
-        }
-        .modern-style h1, .modern-style h2, .modern-style h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            color: #2d3748;
-        }
-        .modern-style p {
-            margin-bottom: 0.75rem;
-        }
-        .modern-style .section-heading {
-            border-bottom: 2px solid #a0aec0;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Loading spinner */
-        .loader {
-            border: 4px solid #f3f3f3; /* Light grey */
-            border-top: 4px solid #3498db; /* Blue */
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Message Box */
-        .message-box {
-            z-index: 1000; /* Ensure it's on top */
-        }
-        body {
+/* General body and container styles */
+body {
     font-family: 'Inter', sans-serif;
-    /* Removed background-color here to rely on Tailwind's bg-gray-100 in index.html */
+    color: var(--text-medium);
+    /* Tailwind's bg-gray-100 in index.html handles the background-color */
 }
+
 .container {
-    max-width: 1200px;
+    /* max-width is now handled by Tailwind's max-w-6xl in index.html for better responsiveness */
+    box-shadow: var(--shadow-strong); /* Consistent shadow */
+    transition: box-shadow 0.3s ease;
 }
-.shadow-custom {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+/* Custom shadows for panels and inner elements */
+.shadow-panel {
+    box-shadow: var(--shadow-light);
+}
+
+.shadow-inner-custom {
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* Subtle inner shadow */
+}
+
+
+/* Input and Select field base styles */
+input[type="text"],
+textarea,
+select {
+    border-color: var(--border-light);
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--focus-ring-blue);
+    box-shadow: 0 0 0 2px var(--focus-ring-blue); /* Custom focus ring */
+}
+
+/* Button base styles */
+button {
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    font-weight: 600; /* Semi-bold */
+}
+
+/* Specific button colors (using Tailwind classes in HTML for now) */
+/* .bg-blue-600, .bg-green-600, .bg-red-600 are handled by Tailwind */
+
+
+/* Typography improvements */
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
+    line-height: 1.2; /* Tighter line height for headings */
 }
 
 /* Traditional Style for cover letter output */
 .traditional-style {
-    font-family: 'Playfair Display', serif;
+    /* Changed to a more formal serif font stack */
+    font-family: Georgia, "Times New Roman", Times, serif;
     line-height: 1.6;
-    color: #333;
-}
-.traditional-style h1, .traditional-style h2, .traditional-style h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    color: var(--text-dark);
 }
 .traditional-style p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem; /* Slightly more space between paragraphs */
 }
 
 /* Modern Style for cover letter output */
 .modern-style {
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
-    color: #4a4a4a;
-}
-.modern-style h1, .modern-style h2, .modern-style h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    color: #2d3748;
+    color: var(--text-medium);
 }
 .modern-style p {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem; /* Consistent space between paragraphs */
 }
-.modern-style .section-heading {
-    border-bottom: 2px solid #a0aec0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+.modern-style strong {
+    font-weight: 700; /* Ensure strong is bold */
 }
 
 /* Loading spinner styles */
 .loader {
     border: 4px solid #f3f3f3; /* Light grey */
-    border-top: 4px solid #3498db; /* Blue */
+    border-top: 4px solid var(--primary-blue); /* Blue */
     border-radius: 50%;
     width: 24px;
     height: 24px;
@@ -125,5 +111,17 @@
 /* Message Box styles */
 .message-box {
     z-index: 1000; /* Ensure it's on top of other content */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+}
+.message-box > div { /* Inner box */
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-strong);
 }
 
+/* Utility classes for fonts (optional, but good for direct use in HTML) */
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
